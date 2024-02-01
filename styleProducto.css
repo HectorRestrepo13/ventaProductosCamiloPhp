@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.btn-Nombre {
+  background-color: #343a40;
+  border: none;
+}
+
+.header {
+  margin-bottom: 80px;
+}
+
+.item {
+  padding-bottom: 30px;
+}
+.cabeceraItem {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.cabeceraItem a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-style: italic;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: color 0.3s ease;
+}
+.cabeceraItem a:hover {
+  text-decoration: underline;
+  color: #ff4500;
+}
+
+#itemUser li {
+  color: rgb(255, 255, 255); /* Cambia el color del punto */
+}
+
+.colItem {
+  background-color: #012e40;
+  border: 2px solid black;
+  border-top: none; /* Elimina el borde superior */
+  border-left: none; /* Elimina el borde izquierdo */
+  border-radius: 0 10px 10px 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // se verifica que existan datos en el formulario
 
 if (isset($_POST['nombreProducto']) && !empty($_POST['nombreProducto']) &&
@@ -20,6 +20,7 @@ if (isset($_POST['nombreProducto']) && !empty($_POST['nombreProducto']) &&
      if(!((strpos($tipo,'gif') ||strpos($tipo,'jpeg') || strpos($tipo,'webp') )))
      {
       $_SESSION['mensaje']="solo se permiten archivos git,jpeg,webp";
+      $_SESSION['tipo']="warning";
      header('location: productos.php');
      }
      else{
@@ -34,10 +35,12 @@ if (isset($_POST['nombreProducto']) && !empty($_POST['nombreProducto']) &&
       {
         move_uploaded_file($tem,'imagenes/'.$imagenProducto);
         $_SESSION['mensaje']="Producto Agregado con exito";
+        $_SESSION['tipo']="success";
         header('location: productos.php');
       }
       else{
         $_SESSION['mensaje']="Ocurrio un error al Guardar el Producto";
+        $_SESSION['tipo']="danger";
         header("location: productos.php");
         }
         }
@@ -52,7 +55,7 @@ if (isset($_POST['nombreProducto']) && !empty($_POST['nombreProducto']) &&
          
           
         $_SESSION['mensaje']="Ruta Vacia";
-    
+        $_SESSION['tipo']="warning";
         header("location: productos.php");
     
         }
@@ -66,7 +69,7 @@ if (isset($_POST['nombreProducto']) && !empty($_POST['nombreProducto']) &&
       
      
      $_SESSION['mensaje']="Faltan datos por llenar";
-
+     $_SESSION['tipo']="warning";
      header("location: productos.php");
 
     }
